@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Regards sur le Monde — Emmanuel Sobga Sr.</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1008;
+    --paper: #f5efe2;
+    --cream: #ece4d0;
+    --accent: #8b1a1a;
+    --rule: #2a1e10;
+    --muted: #6b5b4e;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: #d4c9b0;
+    font-family: 'EB Garamond', Georgia, serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 20px;
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 27px,
+        rgba(0,0,0,0.03) 27px,
+        rgba(0,0,0,0.03) 28px
+      );
+  }
+
+  .newspaper {
+    max-width: 1020px;
+    margin: 0 auto;
+    background: var(--paper);
+    box-shadow: 0 4px 40px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.1);
+    padding: 36px 44px 60px;
+    position: relative;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* === HEADER === */
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 4px;
+  }
+
+  .masthead {
+    text-align: center;
+    padding: 18px 0 10px;
+    border-bottom: 4px double var(--rule);
+    margin-bottom: 4px;
+  }
+
+  .masthead-subtitle {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .masthead-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 68px;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -1px;
+    color: var(--ink);
+  }
+
+  .masthead-title span {
+    color: var(--accent);
+  }
+
+  .masthead-author {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--muted);
+    margin-top: 6px;
+    letter-spacing: 0.04em;
+  }
+
+  .header-band {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 3px solid var(--rule);
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+
+  .edition-badge {
+    background: var(--accent);
+    color: white;
+    padding: 3px 10px;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+  }
+
+  /* === SECTION LABEL === */
+  .section-label {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 9px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: white;
+    background: var(--rule);
+    display: inline-block;
+    padding: 3px 10px;
+    margin-bottom: 12px;
+  }
+
+  /* === LEAD STORY === */
+  .lead-story {
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+  }
+
+  .lead-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.08;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  .lead-deck {
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 20px;
+    text-align: center;
+    color: var(--muted);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 8px 40px;
+    margin: 10px 40px 16px;
+    line-height: 1.4;
+  }
+
+  .lead-byline {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 14px;
+  }
+
+  .lead-body {
+    column-count: 3;
+    column-gap: 24px;
+    column-rule: 1px solid var(--cream);
+    font-size: 15px;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .lead-body p { margin-bottom: 10px; }
+  .lead-body p:first-child::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 72px;
+    font-weight: 900;
+    float: left;
+    line-height: 0.7;
+    margin: 6px 6px 0 0;
+    color: var(--accent);
+  }
+
+  /* === GRID === */
+  .stories-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    gap: 0;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 24px;
+  }
+
+  .grid-divider {
+    background: var(--rule);
+    margin: 0 16px;
+  }
+
+  .story-col { padding: 0 4px; }
+
+  .story-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 6px;
+  }
+
+  .story-byline {
+    font-family: 'Libre Baskerville', serif;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+
+  .story-body {
+    font-size: 13.5px;
+    line-height: 1.65;
+    text-align: justify;
+    color: #2c1e10;
+  }
+
+  /* === TWO-COL SECTION === */
+  .two-col {
+    display: grid;
+    grid-template-columns: 3fr 1px 2fr;
+    gap: 0;
+    margin-bottom: 24px;
+    border-bottom: 2px solid var(--rule);
+    padding-bottom: 24px;
+  }
+
+  .two-col .grid-divider { margin: 0 20px; }
+
+  .big-story-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 8px;
+  }
+
+  /* === SPORT BOX === */
+  .sport-box {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 16px 18px;
+    margin-top: 0;
+  }
+
+  .sport-box .section-label {
+    background: var(--accent);
+    color: white;
+    margin-bottom: 10px;
+  }
+
+  .sport-box .story-headline {
+    color: var(--paper);
+    font-size: 18px;
+  }
+
+  .sport-box .story-body {
+    color: rgba(245,239,226,0.82);
+    font-size: 13px;
+  }
+
+  /* === SIDEBAR === */
+  .sidebar-item {
+    border-bottom: 1px solid var(--cream);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+  }
+
+  .sidebar-item:last-child { border-bottom: none; margin-bottom: 0; }
+
+  .sidebar-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 4px;
+  }
+
+  .sidebar-body {
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #3a2a1e;
+  }
+
+  /* === BOTTOM STRIP === */
+  .bottom-strip {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr;
+    gap: 0;
+  }
+
+  /* === QUOTE === */
+  .pull-quote {
+    border-top: 3px solid var(--accent);
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+    margin: 14px 0;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--accent);
+    text-align: center;
+  }
+
+  /* === FOOTER === */
+  .footer {
+    border-top: 3px double var(--rule);
+    margin-top: 32px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Libre Baskerville', serif;
+    font-size: 9.5px;
+    color: var(--muted);
+    letter-spacing: 0.12em;
+  }
+
+  hr.thin { border: none; border-top: 1px solid var(--cream); margin: 10px 0; }
+
+  @media (max-width: 700px) {
+    .masthead-title { font-size: 36px; }
+    .lead-body { column-count: 1; }
+    .stories-grid { grid-template-columns: 1fr; }
+    .grid-divider { display: none; }
+    .two-col { grid-template-columns: 1fr; }
+    .bottom-strip { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="newspaper">
+
+  <!-- TOP INFO BAR -->
+  <div class="header-top">
+    <span>Vol. I — N° 8</span>
+    <span>Fondé en 2026 &bull; Publication indépendante</span>
+    <span>Vendredi 27 Février 2026</span>
+  </div>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead-subtitle">Journal mondial d'information</div>
+    <div class="masthead-title">Regards <span>sur le</span> Monde</div>
+    <div class="masthead-author">par Emmanuel Sobga Sr.</div>
+  </div>
+
+  <!-- EDITION BAND -->
+  <div class="header-band">
+    <span>Diplomatie · Conflits · Économie · Sport · Société</span>
+    <span class="edition-badge">Édition hebdomadaire</span>
+    <span>Prix : offert</span>
+  </div>
+
+  <!-- === LEAD STORY: UKRAINE === -->
+  <div class="lead-story">
+    <div class="section-label">À la une</div>
+    <h1 class="lead-headline">Ukraine : Quatre ans de résistance,<br>l'Europe debout mais divisée</h1>
+    <div class="lead-deck">
+      En ce quatrième anniversaire de l'invasion à grande échelle, Zelensky revendique la survie de l'État ukrainien
+      tandis que les alliés européens renouvellent leur soutien — non sans fissures.
+    </div>
+    <div class="lead-byline">Rédaction internationale &bull; 24 Février 2026</div>
+    <div class="lead-body">
+      <p>Quatre ans après le déclenchement de l'invasion russe en Ukraine, le président Volodymyr Zelensky a réaffirmé que son pays a préservé son intégrité étatique. Dans un discours solennel marquant cet anniversaire douloureux, il a insisté sur la détermination du peuple ukrainien à maintenir une paix respectant la souveraineté de Kyiv. Les dirigeants alliés ont réitéré leur soutien « indéfectible », malgré des divergences croissantes au sein de l'Union européenne.</p>
+      <p>La Slovaquie a suspendu ses livraisons d'électricité d'urgence à l'Ukraine après que Kyiv n'a pas rétabli le transit de pétrole Druzhba, comme l'exigeait Budapest. Le Premier ministre Robert Fico a averti de nouvelles mesures à venir. Cette tension illustre les fractures internes de l'Europe face à une guerre qui s'étire dans la durée.</p>
+      <p>Pendant ce temps, Moscou est accusée d'avoir déporté de force au moins 20 000 enfants ukrainiens depuis le début de l'invasion totale. Kyiv a réussi à faire rentrer environ 2 000 mineurs, mais pour certains, le processus aura duré des années. Des organisations humanitaires internationales réclament des comptes.</p>
+    </div>
+  </div>
+
+  <!-- === 3-COL STORIES === -->
+  <div class="stories-grid">
+    <!-- COL 1 -->
+    <div class="story-col">
+      <div class="section-label">Afrique</div>
+      <h2 class="story-headline">Nigeria : des attaques barbares font des centaines de victimes</h2>
+      <div class="story-byline">Afrique de l'Ouest</div>
+      <p class="story-body">En l'espace de deux semaines, le Nigeria a été endeuillé par deux attaques meurtrières attribuées à des groupes armés affiliés à Boko Haram. La première, début février, a coûté la vie à plus de 170 personnes dans l'État de Kwara. La seconde, le 14 février, a tué au moins 46 individus dans la région de Borgu. Ces violences ont provoqué l'indignation du président Bola Tinubu qui a promis une réponse ferme de l'armée fédérale.</p>
+    </div>
+    <div class="grid-divider"></div>
+    <!-- COL 2 -->
+    <div class="story-col">
+      <div class="section-label">Asie</div>
+      <h2 class="story-headline">Pakistan : déclaration de guerre ouverte contre l'Afghanistan des Talibans</h2>
+      <div class="story-byline">Sous-continent indien</div>
+      <p class="story-body">À la suite d'une attaque lancée par les Talibans pakistanais soutenus depuis Kaboul, Islamabad a déclaré la « guerre ouverte » à l'Afghanistan le 27 février. Des frappes ont visé des sites militaires à Kandahar et Kaboul, faisant de nombreuses victimes des deux côtés. Cette escalade dramatique menace de déstabiliser toute la région frontalière, déjà sous haute tension depuis le retour au pouvoir des Talibans à Kaboul.</p>
+    </div>
+    <div class="grid-divider"></div>
+    <!-- COL 3 -->
+    <div class="story-col">
+      <div class="section-label">Amérique latine</div>
+      <h2 class="story-headline">Mexique : la mort d'« El Mencho » plonge le pays dans le chaos</h2>
+      <div class="story-byline">Sécurité &amp; criminalité organisée</div>
+      <p class="story-body">La mort du baron de la drogue surnommé « El Mencho », chef du Cartel Jalisco Nueva Generación, a déclenché une vague de violences sans précédent. Plus de 70 personnes ont été tuées lors des affrontements qui ont suivi, mettant les forces de sécurité mexicaines à rude épreuve. Ces troubles surviennent à moins de quatre mois de l'ouverture de la Coupe du Monde 2026 à Mexico City, suscitant des inquiétudes sur la sécurité de l'événement.</p>
+    </div>
+  </div>
+
+  <!-- === TWO-COL: Gaza + Brèves === -->
+  <div class="two-col">
+    <!-- LEFT: BIG STORY -->
+    <div>
+      <div class="section-label">Moyen-Orient</div>
+      <h2 class="big-story-headline">Gaza : MSF et trente ONG contraintes de quitter le territoire</h2>
+      <div class="story-byline">Conflit israélo-palestinien · 26 Février 2026</div>
+      <p class="story-body" style="font-size:14.5px; line-height:1.7; text-align:justify;">
+        Israël a annoncé l'expulsion de Médecins Sans Frontières et d'une trentaine d'organisations non gouvernementales de la bande de Gaza d'ici au 28 février. MSF, qui dénonce une décision inacceptable, a déclaré avoir « le devoir de protéger ses collègues palestiniens ». Cette mesure survient dans un contexte d'intensification des opérations militaires israéliennes et de violations répétées de l'accord de cessez-le-feu, selon l'UNRWA.
+      </p>
+      <div class="pull-quote">« Nous avons le devoir de protéger nos collègues palestiniens. »<br><small style="font-size:12px; font-style:normal; letter-spacing:0.1em;">— Médecins Sans Frontières, 26 fév. 2026</small></div>
+      <p class="story-body" style="font-size:14px; line-height:1.65; text-align:justify;">
+        Le point de passage de Rafah a connu une réouverture partielle sous contrôle israélien. L'UNRWA alerte sur ce qu'elle qualifie de « guerre silencieuse » menée en Cisjordanie, avec des violences record de l'armée. La communauté internationale presse les parties à respecter les accords humanitaires.
+      </p>
+    </div>
+    <div class="grid-divider"></div>
+    <!-- RIGHT: SPORT BOX + BRÈVES -->
+    <div>
+      <div class="sport-box" style="margin-bottom:16px;">
+        <div class="section-label">Sport</div>
+        <h3 class="story-headline" style="color:var(--paper); font-size:17px; margin-bottom:6px;">JO d'hiver 2026 : la France reçoit le flambeau pour 2030</h3>
+        <p class="story-body" style="color:rgba(245,239,226,0.83); font-size:13px;">Lors de la cérémonie de clôture des Jeux Olympiques d'hiver de Milan-Cortina d'Ampezzo, le drapeau olympique a été remis à la France en prévision des JO 2030 dans les Alpes françaises. Une fierté nationale doublée d'un défi logistique et environnemental immense.</p>
+        <hr style="border-color:rgba(255,255,255,0.15); margin:10px 0;">
+        <h3 class="story-headline" style="color:var(--paper); font-size:15px; margin-bottom:5px;">Football africain : l'Afrique au cœur du Mondial 2026</h3>
+        <p class="story-body" style="color:rgba(245,239,226,0.83); font-size:12.5px;">Avec 9 places désormais attribuées au continent, l'Afrique se prépare à briller. Sadio Mané, Mohamed Salah et Achraf Hakimi incarnent les ambitions d'un continent en pleine ascension footballistique.</p>
+      </div>
+
+      <div class="section-label">En bref</div>
+      <div class="sidebar-item">
+        <div class="sidebar-headline">Bangladesh : alternance politique historique</div>
+        <p class="sidebar-body">Le 12 février, le Parti nationaliste du Bangladesh de Tarique Rahman a remporté les législatives avec la majorité absolue, mettant fin à l'hégémonie de la Ligue Awami.</p>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-headline">Pérou : destitution du président Jerí</div>
+        <p class="sidebar-body">Le Congrès péruvien a destitué le président José Jerí pour corruption présumée. Son successeur José María Balcázar a prêté serment le lendemain, 15 février.</p>
+      </div>
+      <div class="sidebar-item">
+        <div class="sidebar-headline">Madagascar : le cyclone Gezani dévaste Toamasina</div>
+        <p class="sidebar-body">Le cyclone a détruit 80 % de la ville portuaire de Toamasina, faisant 59 morts et plus de 425 000 sinistrés. Une catastrophe humanitaire qui mobilise l'aide internationale.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- === BOTTOM STRIP: 4 brèves === -->
+  <div>
+    <div class="section-label">Monde en bref</div>
+    <div class="bottom-strip">
+      <div class="story-col">
+        <h3 class="sidebar-headline" style="font-size:14px;">Pays-Bas : nouveau Premier ministre</h3>
+        <p class="sidebar-body">Rob Jetten est devenu Premier ministre des Pays-Bas le 23 février 2026, à la tête d'une coalition inédite après des mois de tractations post-électorales.</p>
+      </div>
+      <div class="grid-divider"></div>
+      <div class="story-col">
+        <h3 class="sidebar-headline" style="font-size:14px;">Costa Rica : une femme élue présidente</h3>
+        <p class="sidebar-body">Laura Fernández Delgado, du parti Pueblo Soberano, a remporté la présidentielle avec 48,3 % des suffrages, devenant l'une des rares femmes chefs d'État de la région.</p>
+      </div>
+      <div class="grid-divider"></div>
+      <div class="story-col">
+        <h3 class="sidebar-headline" style="font-size:14px;">Tennis : Alcaraz réalise le Grand Chelem</h3>
+        <p class="sidebar-body">À 22 ans seulement, Carlos Alcaraz a battu Novak Djokovic en finale de l'Open d'Australie et complète ainsi le Grand Chelem, devenant le plus jeune à réaliser cette performance.</p>
+      </div>
+      <div class="grid-divider"></div>
+      <div class="story-col">
+        <h3 class="sidebar-headline" style="font-size:14px;">Colombie : éruption volcanique dans le nord</h3>
+        <p class="sidebar-body">Un volcan a fait son entrée en éruption dans le nord de la Colombie le 26 février, forçant l'évacuation de milliers de personnes. Les autorités restent en état d'alerte maximale.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <p><strong>Regards sur le Monde</strong> &mdash; Journal d'information mondiale indépendant</p>
+    <p style="margin-top:4px;">Directeur de la publication : <em>Emmanuel Sobga Sr.</em> &bull; Semaine du 23 au 27 Février 2026 &bull; Toute reproduction interdite sans autorisation</p>
+  </div>
+
+</div>
+</body>
+</html>
